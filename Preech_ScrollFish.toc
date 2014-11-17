@@ -3,3 +3,5 @@
 ## Notes: Casts fish on scroll up and down if you have a pole equipped.
 Preech_ScrollFish.lua
 Preech_ScrollFish.xml
+
+Preech_Fishing.lua
