@@ -12,6 +12,7 @@ POLES = {
   19022,    -- Nat Pagle's Extreme Angler FC-5000
   44050,    -- Mastercraft Kalu'ak Fishing Pole
   45858,    -- Nat's Lucky Fishing Pole
+  45991,    -- Bone Fishing Pole
   84661,    -- Dragon Fishing Pole
   118381,   -- Ephermeral Fishing Pole
 };
