@@ -1,4 +1,4 @@
-## Interface: 60000
+## Interface: 60100
 ## Title: Preech_ScrollFish
 ## Notes: Casts fish on scroll up and down if you have a pole equipped.
 Preech_ScrollFish.lua
