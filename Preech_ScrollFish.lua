@@ -51,18 +51,38 @@ function ScrollFish_OnPreClick(self, button, down)
               else
                 head_name, head_link = GetItemInfo(head);
                 pole_name, pole_link = GetItemInfo(mh);
-                WriteChatMessage(head_link .. ', ' .. pole_link .. ', no buff');
-                WriteChatMessage('buffing your rod...');
+                WriteChatMessage('buffing ' .. pole_link .. ' with ' .. head_link);
                 -- TODO only enchant if the buff is ready -- "Item is not ready yet."
                 enchant_this_badboy = true;
                 break;
               end
             end
           end
+
+          if not enchant_this_badboy then
+            for i = 1, 40 do
+              local raft = 'Anglers Fishing Raft';
+              local n, _, _, _, _, dur, x, _, _ = UnitBuff("player", i);
+
+              if n == raft then
+                secs_left = -1 * (GetTime() - x);
+                if secs_left < 30 then
+                  _, link = GetItemInfo(raft);
+                  if link then
+                    WriteChatMessage('casting ' .. link);
+                  end
+                  macro = '/cast ' .. raft;
+                end
+              end
+            end
+          end
+
           if enchant_this_badboy then
             macro = '/use ' .. INV_SLOT_HEAD;
           else
-            macro = '/cast fishing';
+            if macro == nil then
+              macro = '/cast fishing';
+            end
           end
           break;
         end
